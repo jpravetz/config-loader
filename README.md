@@ -160,19 +160,18 @@ also load this file. In this situation __options.appDir__ must also be specified
 * __configFileList__ List of config files to load
 * __options__ An object with the following properties:
 ** __excludeGlobals__ If true then the global config file is not loaded (default false)
-** __appDir__ Specify the path relative to which any first-level values beginning with $APP$ are resolved
-** __resolveAppPath__ If true then resolve the value as a path, replacing any first-level property values that begin with $APP$ with options.appDir
-** __resolveConfigPath__ If true then resolve the value as a path, replacing any first-level property values that begin with $CONFIG$ with the path to the config file itself
+** __replace__ An object with key, value pairs where ${KEY} is to be replaced with value in all config strings. key is made uppercase.
+** __resolveConfigPath__ If true then resolve the value as a path, replacing any first-level property values that begin with ${CONFIG} with the path to the config file itself
 
-When using __resolveAppPath__ or __resolveConfigPath__ the config loader will replace any _first-level_ property values
-containing $APP$ or $CONFIG$ with the corresponding value. For example
+When using __resolveAppPath__, __resolveHomePath__ or __resolveConfigPath__ the config loader will replace any _first-level_ property values
+containing ${APP} or ${CONFIG} with the corresponding value. For example
 
 ```javascript
 {
     default: {
-        "altLocales": "$CONFIG$/../locales",
-        "altPublic": "$CONFIG$../public",
-        "logHome": "$APP$/log",
+        "altLocales": "${CONFIG}/../locales",
+        "altPublic": "${CONFIG}../public",
+        "logHome": "${APP}/log",
     }
 }
 ```
@@ -189,7 +188,7 @@ Will resolve to
 }
 ```
 
-Note that the forward slash following __$CONFIG$__ or __$APP$__ is optional and is removed before resolving the path.
+Note that the forward slash following __${CONFIG}__ or __${APP}__ is optional and is removed before resolving the path.
 
 #### Returns #####
 
@@ -215,21 +214,3 @@ Example:
 var config = Config.get();
 ```
 
-### getDb ###
-
-Helper to return the settings for a particular database. Database settings
-must be stored with the key 'db:mydbname'.
-
-#### Parameters ####
-
-- __name__  Name of the database settings to return
-
-#### Returns #####
-
-The settings for the specified database, or null if not found.
-
-Example:
-
-```javascript
-var orgSettings = Config.getDb('org');
-```
