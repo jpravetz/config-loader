@@ -1,6 +1,6 @@
 {
-    "name": "config-loader",
-    "description": "Jim's config loader",
+    "name": "epdoc-config",
+    "description": "Config loader supporting multiple config files with subsections for default and environment",
     "version": "2.0.0",
     "author": {
         "name": "jpravetz",
