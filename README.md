@@ -1,6 +1,8 @@
-# config-loader #
+# epdoc-config #
 
-The config-loader library provides a mechanism to load environment-specific config settings
+Config loader and validator.
+
+The epdoc-config library provides a mechanism to load environment-specific config settings
 that are merged from a list of json files that you specify. Files are loaded in order, with the later files
 overwriting earlier settings.
 
