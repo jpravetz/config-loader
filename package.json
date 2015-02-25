@@ -1,7 +1,7 @@
 {
     "name": "epdoc-config",
-    "description": "Config loader supporting multiple config files with subsections for default and environment",
-    "version": "2.0.0",
+    "description": "Config loader supporting mixin of multiple config files with subsections for default and environment-specific configuration",
+    "version": "2.0.1",
     "author": {
         "name": "jpravetz",
         "email": "jpravetz@epdoc.com"
