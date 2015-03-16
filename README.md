@@ -90,6 +90,7 @@ then the array of all _extended config_ files will be loaded once the initial li
 * __configFileList__ List of config files to load
 * __options__ An object with the following properties:
 ** __replace__ An object with key, value pairs where ${KEY} is to be replaced with value in all config strings. key is made uppercase.
+** __flat__ Support loading flat files that do not have 'defaults' and 'env' subsections.
 
 
 #### Returns #####
