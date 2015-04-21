@@ -117,3 +117,17 @@ Example:
 var config = Config.get();
 ```
 
+### extend ###
+
+Copy all of the properties in the source objects over to the config object, and return the config object. 
+It's in-order, so the source will override properties of the same name in previous config.
+
+#### Returns #####
+
+The resultant config settings.
+
+Example:
+
+```javascript
+var config = Config.extend({url:"http://my/path"});
+```
