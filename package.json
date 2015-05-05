@@ -1,7 +1,7 @@
 {
     "name": "epdoc-config",
     "description": "Config loader supporting mixin of multiple config files with subsections for default and environment-specific configuration",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "author": {
         "name": "jpravetz",
         "email": "jpravetz@epdoc.com"
@@ -12,6 +12,10 @@
             "email": "jpravetz@epdoc.com"
         }
     ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/jpravetz/epdoc-config.git"
+    },
     "keywords": [
         "configuration",
         "key value store"
