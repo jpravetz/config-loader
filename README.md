@@ -90,7 +90,11 @@ then the array of all _extended config_ files will be loaded once the initial li
 * __configFileList__ List of config files to load
 * __options__ An object with the following properties:
 ** __replace__ An object with key, value pairs where ${KEY} is to be replaced with value in all config strings. key is made uppercase.
-** __flat__ Support loading flat files that do not have 'defaults' and 'env' subsections.
+** __flat__ Support loading flat files that do not have 'defaults' and 'env' subsections. If the file does not contain
+a section named 'defaults', a section named for the specified environment, or a top level entry```"_type": "tree"```, 
+then the file is loaded as a flat file.
+To ensure that files that are _not_ flat get loaded properly, please always ensure that they contain a 'defaults' section
+or that the top level object contains the property ```"_type": "tree"```.
 
 
 #### Returns #####
